@@ -38,3 +38,21 @@ def strength_label(score):
         return "Medium"
     else:
         return "Weak"
+    
+def main():
+    print("🔐 Password Strength Checker")
+    password = input("Enter your password: ")
+
+    score, feedback = check_password_strength(password)
+    label = strength_label(score)
+
+    print(f"\nStrength: {label} ({score}/5)")
+
+    if feedback:
+        print("Suggestions:")
+        for tip in feedback:
+            print("-", tip)
+
+
+if __name__ == "__main__":
+    main()
