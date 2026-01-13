@@ -30,3 +30,11 @@ def check_password_strength(password):
         feedback.append("Add special characters")
 
     return score, feedback
+
+def strength_label(score):
+    if score == 5:
+        return "Very Strong"
+    elif score >= 3:
+        return "Medium"
+    else:
+        return "Weak"
